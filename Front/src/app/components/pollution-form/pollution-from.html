@@ -1,0 +1,56 @@
+<body>
+  <h2>Déclaration d'une pollution</h2>
+
+  <form [formGroup]="formulaire" (ngSubmit)="send()">
+
+    <div class="form-group">
+      <p><label>Titre :</label><input formControlName="titre" /></p>
+    </div>
+
+    <div class="form-group">
+      <p>
+        <label>Type :</label>
+        <select formControlName="type_pollution">
+          <option value="">Sélectionner</option>
+          <option>Plastique</option>
+          <option>Chimique</option>
+          <option>Dépôt sauvage</option>
+          <option>Eau</option>  
+          <option>Air</option>
+          <option>Autre</option>
+        </select>
+      </p>
+    </div>
+
+    <div class="form-group-full">
+      <p><label>Description :</label><textarea formControlName="description"></textarea></p>
+    </div>
+
+    <div class="form-group">
+      <p><label>Date :</label><input type="date" formControlName="date_observation" /></p>
+    </div>
+
+    <div class="form-group">
+      <p><label>Lieu :</label><input formControlName="lieu" /></p>
+    </div>
+
+    <div class="form-group">
+      <p><label>Latitude :</label><input formControlName="latitude" type="number" />
+    </div>
+
+    <div class="form-group">
+      <p><label>Longitude :</label><input formControlName="longitude" type="number" /></p>
+    </div>
+
+    <div class="form-group-full">
+      <p><label>Photo (URL) :</label><input formControlName="photo_url" /></p>
+    </div>
+
+    
+    <form [formGroup]="formulaire" (ngSubmit)="send()">
+  
+  <div class="button-container">
+    <button type="submit" [disabled]="formulaire.invalid">Déclarer</button>
+  </div>
+</form>
+

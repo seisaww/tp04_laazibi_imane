@@ -1,0 +1,28 @@
+<body>
+  <h2>Inscription utilisateur</h2>
+
+  <form [formGroup]="formulaire" (ngSubmit)="send()">
+
+    <div class="form-group">
+      <p><label>Nom :</label><input formControlName="nom" /></p>
+    </div>
+
+    <div class="form-group">
+      <p><label>Prénom :</label><input formControlName="prenom" /></p>
+    </div>
+
+    <div class="form-group">
+      <p><label>Identifiant :</label><input formControlName="identifiant" /></p>
+    </div>
+
+    <div class="form-group">
+      <p><label>Mot de passe :</label>
+         <input formControlName="motDePasse" type="password" />
+      </p>
+    </div>
+
+    <div class="button-container">
+      <button type="submit" [disabled]="formulaire.invalid">S'inscrire</button>
+    </div>
+
+  </form> </body>

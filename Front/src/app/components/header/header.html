@@ -1,0 +1,45 @@
+<header class="main-header">
+  <nav class="main-nav">
+    
+    <a routerLink="/" class="nav-logo">
+      Projet Pollutions
+    </a>
+
+    <ul class="nav-links">
+      <li>
+        <a routerLink="/" 
+           routerLinkActive="active-link"
+           [routerLinkActiveOptions]="{exact: true}">
+           Accueil
+        </a>
+      </li>
+      <li>
+        <a routerLink="/pollutions/liste" 
+           routerLinkActive="active-link">
+           Voir la liste
+        </a>
+      </li>
+      <li>
+        <a routerLink="/pollutions/formulaire" 
+           routerLinkActive="active-link"
+           class="nav-button-cta">
+           Signaler une pollution
+        </a>
+      </li>
+    </ul>
+
+    <ul class="nav-auth">
+      <li>
+        <a routerLink="/inscription-list" routerLinkActive="active-link">
+          Voir les utilisateurs
+        </a>
+      </li>
+      <li>
+        <a routerLink="/inscription" routerLinkActive="active-link">
+          Inscription
+        </a>
+      </li>
+      </ul>
+
+  </nav>
+</header>
