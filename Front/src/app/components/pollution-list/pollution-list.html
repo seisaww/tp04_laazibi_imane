@@ -1,18 +1,54 @@
-<div class="row">
+<div class="container my-5">
+
+  <h2 class="text-success text-center mb-4">Liste des pollutions</h2>
+
+  <!-- Filtres -->
+  <div class="row mb-4 g-3 justify-content-center">
+    <div class="col-md-3">
+      <label class="form-label">Type de pollution</label>
+      <select class="form-select rounded-pill border-success" (change)="handleFilterChange('type', $event)">
+        <option value="">Tous</option>
+        <option>Plastique</option>
+        <option>Chimique</option>
+        <option>Dépôt sauvage</option>
+        <option>Eau</option>
+        <option>Air</option>
+        <option>Autre</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label class="form-label">Lieu</label>
+      <input type="text" class="form-control rounded-pill border-success" placeholder="Recherche par lieu" 
+             (input)="handleFilterChange('lieu', $event)">
+    </div>
+
+    <div class="col-md-3">
+      <label class="form-label">Date</label>
+      <input type="date" class="form-control rounded-pill border-success" 
+             (change)="handleFilterChange('date', $event)">
+    </div>
+  </div>
+
+  <!-- Liste des pollutions -->
+  <div class="row g-4 justify-content-center">
     @for (pollution of filteredPollutions; track pollution.id) {
-        <div class="col-md-6">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">{{ pollution.titre }}</h5>
-                    <p class="card-text"> </p>
-                    <button class="btn btn-info btn-sm me-2" [routerLink]="['/pollutions/detail', pollution.id]">
-                        Détails
-                    </button>
-                </div>
-            </div>
+      <div class="col-md-5">
+        <div class="card shadow-lg rounded-4 h-100" style="border: 2px solid #198754;">
+          <div class="card-body text-center">
+            <h5 class="text-success">{{ pollution.titre }}</h5>
+            <p class="mb-3">{{ pollution.type_pollution }} - {{ pollution.lieu }}</p>
+            <button class="btn btn-success rounded-pill" [routerLink]="['/pollutions/detail', pollution.id]">
+              Détails
+            </button>
+          </div>
         </div>
-    } 
+      </div>
+    }
+  </div>
+
+  @if (filteredPollutions.length === 0) {
+    <p class="text-center text-warning mt-4">Aucune pollution ne correspond aux critères.</p>
+  }
+
 </div>
-
-
-

@@ -1,45 +1,25 @@
 <header class="main-header">
-  <nav class="main-nav">
-    
-    <a routerLink="/" class="nav-logo">
-      Projet Pollutions
-    </a>
+  <a routerLink="/" class="nav-logo d-flex align-items-center text-decoration-none">
+    <h3 class="m-0">Pollusite</h3>
+  </a>
 
-    <ul class="nav-links">
-      <li>
-        <a routerLink="/" 
-           routerLinkActive="active-link"
-           [routerLinkActiveOptions]="{exact: true}">
-           Accueil
-        </a>
+  <nav class="d-flex align-items-center">
+    <ul class="nav d-flex gap-3 m-0">
+      <li class="nav-item">
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Accueil</a>
       </li>
-      <li>
-        <a routerLink="/pollutions/liste" 
-           routerLinkActive="active-link">
-           Voir la liste
-        </a>
+      <li class="nav-item">
+        <a routerLink="/pollutions/liste" routerLinkActive="active-link" class="nav-link">Voir la liste</a>
       </li>
-      <li>
-        <a routerLink="/pollutions/formulaire" 
-           routerLinkActive="active-link"
-           class="nav-button-cta">
-           Signaler une pollution
-        </a>
+      <li class="nav-item">
+        <a routerLink="/pollutions/formulaire" routerLinkActive="active-link" class="nav-link">Signaler une pollution</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/inscription-list" routerLinkActive="active-link" class="nav-link">Voir les utilisateurs</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/inscription" routerLinkActive="active-link" class="nav-link">Inscription</a>
       </li>
     </ul>
-
-    <ul class="nav-auth">
-      <li>
-        <a routerLink="/inscription-list" routerLinkActive="active-link">
-          Voir les utilisateurs
-        </a>
-      </li>
-      <li>
-        <a routerLink="/inscription" routerLinkActive="active-link">
-          Inscription
-        </a>
-      </li>
-      </ul>
-
   </nav>
 </header>

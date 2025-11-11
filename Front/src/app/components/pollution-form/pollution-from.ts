@@ -3,11 +3,12 @@ import {FormControl,FormGroup, ReactiveFormsModule, Validators} from '@angular/f
 import { PollutionService } from '../../services/pollution.service';
 import { Pollution } from '../../models/pollution.model';
 import { CommonModule } from '@angular/common';
+import { PollutionRecap } from '../pollution-recap/pollution-recap';
 
 @Component({
   selector: 'app-pollution-from',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, PollutionRecap],
   templateUrl: './pollution-from.html',
   styleUrl: './pollution-from.css'
 })
@@ -62,6 +63,7 @@ export class PollutionFrom implements OnChanges {
     return d.toISOString().split('T')[0]; 
   }
 
+  pollutionPourRecap: Pollution | null = null;
   send() {
     if (this.formulaire.valid){
       
@@ -87,6 +89,7 @@ export class PollutionFrom implements OnChanges {
       obs$.subscribe({
           next: (resultat: Pollution) => { 
               this.pollutionDeclaree.emit(resultat); 
+              this.pollutionPourRecap = resultat;
               this.formulaire.reset({ id: null, type_pollution: '' });
           },
           error: (error: any) => { 

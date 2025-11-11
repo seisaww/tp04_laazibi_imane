@@ -1,21 +1,22 @@
-<h2>Liste des utilisateurs inscrits</h2>
+<div class="container my-5 d-flex flex-column align-items-center">
 
-<div class="row">
-  @for (user of utilisateurs; track user.id) {
-    <div class="col-md-6">
-      <div class="card mb-3">
-        <div class="card-body">
-          
-          <h5 class="card-title">{{ user.prenom }} {{ user.nom }}</h5>
-          
-          <p class="card-text">{{ user.identifiant }}</p>
+  <h2 class="text-success mb-4 text-center">Liste des utilisateurs inscrits</h2>
 
+  <div class="row w-100 justify-content-center">
+    @for (user of utilisateurs; track user.id) {
+      <div class="col-md-6 mb-3">
+        <div class="card shadow rounded-4 h-100 border-success">
+          <div class="card-body text-center">
+            <h5 class="card-title text-success">{{ user.prenom }} {{ user.nom }}</h5>
+            <p class="card-text">{{ user.identifiant }}</p>
           </div>
+        </div>
       </div>
-    </div>
-  } @empty {
-    <div class="col-12">
-      <p>Aucun utilisateur inscrit pour le moment.</p>
-    </div>
-  }
+    } @empty {
+      <div class="col-12 text-center">
+        <p class="text-muted">Aucun utilisateur inscrit pour le moment.</p>
+      </div>
+    }
+  </div>
+
 </div>

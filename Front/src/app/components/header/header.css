@@ -1,54 +1,30 @@
 .main-header {
-  background-color: #333;
-  padding: 15px 30px;
-  color: white;
-}
-
-.main-nav {
+  background-color: #198754; /* vert */
+  font-family: 'Poppins', sans-serif; /* police moderne et arrondie */
+  padding: 0.5rem 2rem;
   display: flex;
-  justify-content: space-between; /* Aligne les éléments */
   align-items: center;
+  justify-content: space-between;
 }
 
-.nav-links,
-.nav-auth {
-  list-style: none; /* Enlève les puces */
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 20px; /* Espace entre les liens */
+.nav-logo h3 {
+  font-weight: 600;
+  color: #ffffff; /* logo + nom en blanc */
 }
 
-.main-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 5px 0;
-  transition: color 0.3s ease;
+.nav-link {
+  color: #ffffff; /* liens en blanc */
+  transition: color 0.2s, transform 0.2s;
+  border-radius: 0.5rem; /* coins légèrement arrondis */
+  padding: 0.25rem 0.5rem;
 }
 
-.main-nav a:hover {
-  color: #00aaff; /* Couleur au survol */
+.nav-link:hover {
+  color: #cce5cc; /* vert clair au survol */
+  background-color: rgba(255,255,255,0.1); /* effet doux derrière le lien */
+  transform: translateY(-2px);
 }
 
-/* C'EST LA PARTIE IMPORTANTE */
-/* Cette classe est ajoutée automatiquement par routerLinkActive */
-.main-nav a.active-link {
-  color: #00aaff;
-  border-bottom: 2px solid #00aaff;
-}
-
-/* Style pour le bouton "Signaler" */
-.nav-button-cta {
-  background-color: #007bff;
-  color: white !important;
-  padding: 8px 12px;
-  border-radius: 5px;
-}
-.nav-button-cta:hover {
-  background-color: #0056b3;
-  color: white !important;
-}
-.nav-button-cta.active-link {
-  border-bottom: none; /* Pas besoin de souligner le bouton */
+.active-link {
+  text-decoration: underline;
 }

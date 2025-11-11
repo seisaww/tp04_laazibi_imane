@@ -1,28 +1,44 @@
-<body>
-  <h2>Inscription utilisateur</h2>
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-lightgreen">
+  <div class="card shadow-lg p-4 rounded-4" style="max-width: 450px; width: 100%; background-color: #ffffff;">
+    
+    <h2 class="text-success text-center mb-4">Inscription utilisateur</h2>
 
-  <form [formGroup]="formulaire" (ngSubmit)="send()">
+    <form [formGroup]="formulaire" (ngSubmit)="send()" class="needs-validation">
 
-    <div class="form-group">
-      <p><label>Nom :</label><input formControlName="nom" /></p>
-    </div>
+      <!-- Nom -->
+      <div class="mb-3">
+        <label class="form-label">Nom :</label>
+        <input formControlName="nom" class="form-control rounded-pill border-success" placeholder="Votre nom">
+      </div>
 
-    <div class="form-group">
-      <p><label>Prénom :</label><input formControlName="prenom" /></p>
-    </div>
+      <!-- Prénom -->
+      <div class="mb-3">
+        <label class="form-label">Prénom :</label>
+        <input formControlName="prenom" class="form-control rounded-pill border-success" placeholder="Votre prénom">
+      </div>
 
-    <div class="form-group">
-      <p><label>Identifiant :</label><input formControlName="identifiant" /></p>
-    </div>
+      <!-- Identifiant -->
+      <div class="mb-3">
+        <label class="form-label">Identifiant :</label>
+        <input formControlName="identifiant" class="form-control rounded-pill border-success" placeholder="Nom d'utilisateur">
+      </div>
 
-    <div class="form-group">
-      <p><label>Mot de passe :</label>
-         <input formControlName="motDePasse" type="password" />
-      </p>
-    </div>
+      <!-- Mot de passe -->
+      <div class="mb-4">
+        <label class="form-label">Mot de passe :</label>
+        <input formControlName="motDePasse" type="password" class="form-control rounded-pill border-success" placeholder="••••••••">
+      </div>
 
-    <div class="button-container">
-      <button type="submit" [disabled]="formulaire.invalid">S'inscrire</button>
-    </div>
+      <!-- Bouton -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success btn-lg rounded-pill" [disabled]="formulaire.invalid">
+          S'inscrire
+        </button>
+      </div>
 
-  </form> </body>
+      
+
+    </form>
+
+  </div>
+</div>

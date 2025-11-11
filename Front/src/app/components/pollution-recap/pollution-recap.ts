@@ -4,10 +4,11 @@ import { Pollution } from '../../models/pollution.model';
 
 @Component({
   selector: 'app-pollution-recap',
+  standalone: true,          
   imports: [CommonModule],
   templateUrl: './pollution-recap.html',
-  styleUrl: './pollution-recap.css'
+  styleUrls: ['./pollution-recap.css']
 })
 export class PollutionRecap {
-  @Input() pollution!: Pollution;
+  @Input() pollution: Pollution | null = null;  
 }

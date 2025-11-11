@@ -1,56 +1,70 @@
-<body>
-  <h2>Déclaration d'une pollution</h2>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-lg p-4 rounded-4" style="max-width: 600px; width: 100%; border: 2px solid #198754; background-color: #ffffff;">
+    
+    <h2 class="text-success text-center mb-4">Déclaration d'une pollution</h2>
 
-  <form [formGroup]="formulaire" (ngSubmit)="send()">
+    <form [formGroup]="formulaire" (ngSubmit)="send()" class="needs-validation">
 
-    <div class="form-group">
-      <p><label>Titre :</label><input formControlName="titre" /></p>
-    </div>
+      <div class="mb-3">
+        <label class="form-label">Titre :</label>
+        <input formControlName="titre" class="form-control rounded-pill border-success" placeholder="Titre de la pollution">
+      </div>
 
-    <div class="form-group">
-      <p>
-        <label>Type :</label>
-        <select formControlName="type_pollution">
+      <div class="mb-3">
+        <label class="form-label">Type :</label>
+        <select formControlName="type_pollution" class="form-select rounded-pill border-success">
           <option value="">Sélectionner</option>
           <option>Plastique</option>
           <option>Chimique</option>
           <option>Dépôt sauvage</option>
-          <option>Eau</option>  
+          <option>Eau</option>
           <option>Air</option>
           <option>Autre</option>
         </select>
-      </p>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Description :</label>
+        <textarea formControlName="description" class="form-control rounded-3 border-success" rows="4" placeholder="Décrivez la pollution"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Date :</label>
+        <input type="date" formControlName="date_observation" class="form-control rounded-pill border-success">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Lieu :</label>
+        <input formControlName="lieu" class="form-control rounded-pill border-success" placeholder="Lieu">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Latitude :</label>
+        <input formControlName="latitude" type="number" class="form-control rounded-pill border-success" placeholder="Latitude">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Longitude :</label>
+        <input formControlName="longitude" type="number" class="form-control rounded-pill border-success" placeholder="Longitude">
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Photo (URL) :</label>
+        <input formControlName="photo_url" class="form-control rounded-pill border-success" placeholder="Lien vers la photo">
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success btn-lg rounded-pill" [disabled]="formulaire.invalid">
+          Déclarer
+        </button>
+      </div>
+
+    </form>
+
+    <!-- Récapitulatif affiché après soumission -->
+    <div class="mt-4">
+      <app-pollution-recap [pollution]="pollutionPourRecap"></app-pollution-recap>
     </div>
 
-    <div class="form-group-full">
-      <p><label>Description :</label><textarea formControlName="description"></textarea></p>
-    </div>
-
-    <div class="form-group">
-      <p><label>Date :</label><input type="date" formControlName="date_observation" /></p>
-    </div>
-
-    <div class="form-group">
-      <p><label>Lieu :</label><input formControlName="lieu" /></p>
-    </div>
-
-    <div class="form-group">
-      <p><label>Latitude :</label><input formControlName="latitude" type="number" />
-    </div>
-
-    <div class="form-group">
-      <p><label>Longitude :</label><input formControlName="longitude" type="number" /></p>
-    </div>
-
-    <div class="form-group-full">
-      <p><label>Photo (URL) :</label><input formControlName="photo_url" /></p>
-    </div>
-
-    
-    <form [formGroup]="formulaire" (ngSubmit)="send()">
-  
-  <div class="button-container">
-    <button type="submit" [disabled]="formulaire.invalid">Déclarer</button>
   </div>
-</form>
-
+</div>
